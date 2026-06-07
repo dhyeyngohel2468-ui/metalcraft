@@ -1,0 +1,15 @@
+# Database credentials - never commit this
+ownadmin/db.php
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor folders
+.vscode/
+.idea/
+
+# Error logs
+*.log
+error_log

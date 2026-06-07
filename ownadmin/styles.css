@@ -1,0 +1,254 @@
+/********** MetalCraft — Main Website CSS **********/
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 30px;
+    bottom: 30px;
+    z-index: 99;
+}
+
+.fw-medium { font-weight: 600; }
+.mt-6 { margin-top: 5rem; }
+.mb-6 { margin-bottom: 5rem; }
+.pt-6 { padding-top: 5rem; }
+.pb-6 { padding-bottom: 5rem; }
+
+/*** Spinner ***/
+#spinner { opacity: 0; visibility: hidden; transition: opacity .5s ease-out, visibility 0s linear .5s; z-index: 99999; }
+#spinner.show { transition: opacity .5s ease-out, visibility 0s linear 0s; visibility: visible; opacity: 1; }
+
+/*** Button ***/
+.btn { transition: .5s; font-weight: 600; text-transform: uppercase; }
+.btn-primary, .btn-outline-primary:hover { color: var(--bs-light); }
+.btn-secondary, .btn-outline-secondary:hover { color: var(--bs-dark); }
+.btn-square  { width: 38px; height: 38px; }
+.btn-sm-square { width: 32px; height: 32px; }
+.btn-lg-square { width: 48px; height: 48px; }
+.btn-xl-square { width: 60px; height: 60px; }
+.btn-xxl-square { width: 75px; height: 75px; }
+.btn-square, .btn-sm-square, .btn-lg-square, .btn-xl-square, .btn-xxl-square {
+    padding: 0; display: flex; align-items: center; justify-content: center; font-weight: normal;
+}
+
+/*** Navbar ***/
+.sticky-top { top: -100px; transition: .5s; }
+.navbar .navbar-nav .nav-link { margin-right: 35px; padding: 25px 0; color: var(--bs-dark); font-size: 16px; text-transform: uppercase; font-weight: 600; outline: none; }
+.navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .nav-link.active { color: var(--bs-primary); }
+.navbar .dropdown-toggle::after { border: none; content: "\f107"; font-family: "Font Awesome 5 Free"; font-weight: 900; vertical-align: middle; margin-left: 8px; }
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav .nav-link { margin-right: 0; padding: 10px 0; }
+    .navbar .navbar-nav { margin-top: 15px; border-top: 1px solid #EEEEEE; }
+}
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu { display: block; border: none; margin-top: 0; top: 150%; opacity: 0; visibility: hidden; transition: .5s; }
+    .navbar .nav-item:hover .dropdown-menu { top: 100%; visibility: visible; transition: .5s; opacity: 1; }
+}
+
+/*** Service ***/
+.service .service-item { position: relative; margin-top: 45px; }
+.service .service-inner { position: relative; height: 100%; margin-top: 45px; background: var(--bs-white); box-shadow: 0 0 45px rgba(0,0,0,.05); }
+.service .service-inner::before { position: absolute; content: ""; width: 100%; height: 0; left: 0; bottom: 0; transition: 1s; background: var(--bs-primary); }
+.service .service-inner:hover::before { height: 100%; top: 0; }
+.service .service-item img { margin-top: -45px; padding-left: 45px; }
+.service .service-item * { position: relative; transition: .5s; z-index: 1; }
+.service .service-item:hover h5, .service .service-item:hover p { color: var(--bs-white); }
+
+/*** Footer ***/
+.footer .btn.btn-link { display: block; margin-bottom: 5px; padding: 0; text-align: left; color: var(--bs-secondary); font-weight: normal; text-transform: capitalize; transition: .3s; }
+.footer .btn.btn-link::before { position: relative; content: "\f105"; font-family: "Font Awesome 5 Free"; font-weight: 900; color: var(--bs-primary); margin-right: 10px; }
+.footer .btn.btn-link:hover { color: var(--bs-primary); letter-spacing: 1px; box-shadow: none; }
+.copyright { background: #222222; }
+.copyright a { color: var(--bs-white); }
+.copyright a:hover { color: var(--bs-primary); }
+
+
+/********** Admin Panel — Shared Styles **********/
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* ── Top Navbar ── */
+.admin-navbar {
+    background-color: #d0932b;
+    padding: 14px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.admin-brand {
+    color: #fff !important;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.admin-brand:hover { color: #f5e6c8 !important; }
+
+/* ── Sidebar ── */
+.admin-sidebar {
+    background-color: #1e1e1e;
+    min-height: calc(100vh - 58px);
+    padding-top: 12px;
+}
+
+.admin-sidebar-item {
+    background-color: transparent !important;
+    border: none !important;
+    border-left: 3px solid transparent !important;
+    padding: 0 !important;
+    transition: all 0.2s;
+}
+
+.admin-sidebar-item a {
+    display: block;
+    padding: 13px 20px;
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.admin-sidebar-item a:hover { color: #d0932b; }
+
+.admin-sidebar-item:hover {
+    border-left-color: #d0932b !important;
+    background-color: rgba(208,147,43,0.08) !important;
+}
+
+.admin-sidebar-item.active {
+    border-left-color: #d0932b !important;
+    background-color: rgba(208,147,43,0.15) !important;
+}
+
+.admin-sidebar-item.active a {
+    color: #d0932b;
+    font-weight: 600;
+}
+
+.sidebar-icon {
+    font-size: 10px;
+    margin-right: 8px;
+    vertical-align: middle;
+    color: #d0932b;
+}
+
+/* ── Dashboard cards ── */
+.admin-card {
+    background: #fff;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: box-shadow 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+.admin-card:hover {
+    box-shadow: 0 6px 20px rgba(208,147,43,0.18);
+    transform: translateY(-2px);
+}
+
+.admin-card-icon { font-size: 32px; margin-bottom: 10px; }
+
+.admin-card-label {
+    font-size: 18px;
+    font-weight: 700;
+    color: #d0932b;
+    margin-bottom: 4px;
+}
+
+/* ── Tables ── */
+.table thead th {
+    background-color: #d0932b !important;
+    color: #fff !important;
+    border-color: #c4892a;
+}
+
+.table-hover tbody tr:hover { background-color: #fdf3e3; }
+
+/* ── Form inputs ── */
+.form-control:focus {
+    border-color: #d0932b;
+    box-shadow: 0 0 0 3px rgba(208,147,43,0.15);
+}
+
+/* ── Submit button ── */
+.admin-btn-primary {
+    background-color: #d0932b;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 10px 28px;
+    transition: background-color 0.3s;
+}
+
+.admin-btn-primary:hover {
+    background-color: #b07c1c;
+    color: #fff;
+}
+
+/* ── Login page ── */
+.login-container {
+    max-width: 420px;
+    margin: 60px auto;
+    padding: 35px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.08);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #d0932b;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-group { margin-bottom: 20px; }
+
+label { display: block; margin-bottom: 5px; font-weight: bold; }
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color .3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #d0932b;
+    box-shadow: 0 0 0 3px rgba(208,147,43,0.15);
+}
+
+.login-container button[type="submit"] {
+    width: 100%;
+    background-color: #d0932b;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+.login-container button[type="submit"]:hover { background-color: #bb7f23; }
+
+.error { color: red; text-align: center; margin-bottom: 15px; }
